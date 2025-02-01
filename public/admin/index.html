@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Admin Panel</title>
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+</head>
+<body>
+    <h1>FAQ Admin Panel</h1>
+    <form id="faqForm">
+        <label for="question">Question:</label>
+        <input type="text" id="question" required>
+        <label for="answer">Answer:</label>
+        <textarea id="answer" required></textarea>
+        <button type="submit">Add FAQ</button>
+    </form>
+    <div id="faqList"></div>
+    <script src="script.js"></script>
+</body>
+</html>
