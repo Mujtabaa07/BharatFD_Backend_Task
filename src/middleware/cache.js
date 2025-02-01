@@ -6,7 +6,7 @@ const MAX_RETRIES = 3;
 
 const initializeRedis = async (retryCount = 0) => {
   if (!client) {
-    const redisUrl = process.env.REDIS_URL || 'redis://localhost:6379';
+    const redisUrl = process.env.REDIS_URL || 'redis://<primary-endpoint>:6379';
     
     client = Redis.createClient({
       url: redisUrl,
