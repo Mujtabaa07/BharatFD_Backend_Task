@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let editingId = null;
 
-    const API_BASE_URL = 'http://localhost:3000';
+    const API_BASE_URL = 'http://localhost:3000'||'http://ec2-52-66-250-106.ap-south-1.compute.amazonaws.com:3000';
 
     faqForm.addEventListener('submit', async (e) => {
         e.preventDefault();
