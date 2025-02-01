@@ -1,14 +1,8 @@
 const mongoose = require('mongoose');
 
 const faqSchema = new mongoose.Schema({
-  question: {
-    type: String,
-    required: true
-  },
-  answer: {
-    type: String,
-    required: true
-  },
+  question: { type: String, required: true },
+  answer: { type: String, required: true },
   translations: {
     type: Map,
     of: {
@@ -18,14 +12,22 @@ const faqSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-faqSchema.methods.getTranslation = function(lang) {
-  if (lang === 'en' || !this.translations.has(lang)) {
+faqSchema.methods.getTranslation = function (lang) {
+  if (lang === 'en') {
     return {
       question: this.question,
       answer: this.answer
     };
   }
-  return this.translations.get(lang);
+  
+  if (this.translations && this.translations.has(lang)) {
+    return this.translations.get(lang);
+  }
+  
+  return {
+    question: this.question,
+    answer: this.answer
+  };
 };
 
 module.exports = mongoose.model('FAQ', faqSchema);
