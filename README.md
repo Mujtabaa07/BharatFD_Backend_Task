@@ -120,19 +120,13 @@ We are using **Amazon ElastiCache** (Redis) for caching frequently accessed data
 ### 3. S3 (Static File Hosting)
 The static frontend files (HTML, CSS, JS) are hosted on **AWS S3**.  
 **S3 URL**:  
-- **Static frontend**: `https://your-bucket-name.s3-website-us-east-1.amazonaws.com/`
+- **Static frontend**: `[https://your-bucket-name.s3-website-us-east-1.amazonaws.com/](http://faq-app-frontend.s3-website.ap-south-1.amazonaws.com/)`
 
 ### 4. Route 53 & ACM (Custom Domain & SSL)
 We configured a **custom domain** using **AWS Route 53** and **SSL certificate** using **AWS Certificate Manager (ACM)**.
 
 ---
 
-## Optional: Continuous Deployment with AWS CodePipeline
-To set up continuous deployment with **AWS CodePipeline**, follow these steps:
-1. **Create a CodePipeline** in the **AWS Console**.
-2. **Link to GitHub** as the source.
-3. **Add a build step** with **AWS CodeBuild**.
-4. **Deploy to EC2** using **AWS CodeDeploy** or **Elastic Beanstalk**.
 
 ---
 
